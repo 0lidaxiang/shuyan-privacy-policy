@@ -1,0 +1,694 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>隐私政策 · 书言</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f5f5f7;
+      --border: #e5e5ea;
+      --text-primary: #1d1d1f;
+      --text-secondary: #6e6e73;
+      --text-tertiary: #aeaeb2;
+      --accent: #0071e3;
+      --accent-light: #e8f2ff;
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, "SF Pro Text", "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 max(20px, env(safe-area-inset-left));
+    }
+
+    .header-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .app-icon {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(145deg, #3b82f6, #1d4ed8);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .app-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: white;
+    }
+
+    .header-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .header-sep {
+      color: var(--text-tertiary);
+      font-size: 14px;
+    }
+
+    .header-sub {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    /* ── Main ── */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 44px max(20px, env(safe-area-inset-left)) max(60px, calc(env(safe-area-inset-bottom) + 40px));
+    }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 48px 0 52px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 48px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 6vw, 42px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    .hero-date {
+      margin-top: 20px;
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+
+    /* ── Summary Cards ── */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 52px;
+    }
+
+    .summary-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 18px 16px;
+    }
+
+    .summary-card .icon {
+      font-size: 22px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .summary-card .label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .summary-card .desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ── Sections ── */
+    .section {
+      margin-bottom: 44px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .section-num {
+      width: 26px;
+      height: 26px;
+      background: var(--text-primary);
+      color: white;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    .section p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Item List ── */
+    .item-list {
+      background: var(--surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .item:last-child {
+      border-bottom: none;
+    }
+
+    .item-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .item-content .item-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+    }
+
+    .item-content .item-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* ── Tag Badge ── */
+    .tag {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    .tag.green {
+      background: #e8f9ef;
+      color: #1a7f42;
+    }
+
+    /* ── Third Party ── */
+    .third-party-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 20px 18px;
+    }
+
+    .tp-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .tp-logo {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #ff6b35, #ff9500);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .tp-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .tp-company {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .tp-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    .tp-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .tp-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Contact ── */
+    .contact-card {
+      background: var(--text-primary);
+      color: white;
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .contact-icon {
+      font-size: 32px;
+      flex-shrink: 0;
+    }
+
+    .contact-text .contact-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .contact-text .contact-sub {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 12px;
+    }
+
+    .contact-email {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+
+    .contact-email:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px max(20px, env(safe-area-inset-left));
+      padding-bottom: max(28px, calc(env(safe-area-inset-bottom) + 20px));
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      line-height: 1.7;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 44px 0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .summary-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero {
+        padding: 36px 0 40px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="app-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14H11V11h2v5zm0-7h-2V7h2v2z"/>
+      </svg>
+    </div>
+    <span class="header-title">书言</span>
+    <span class="header-sep">/</span>
+    <span class="header-sub">隐私政策</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-badge">隐私承诺</div>
+    <h1>我们认真<br>保护你的隐私</h1>
+    <p>书言不收集任何账号信息，不追踪用户行为，你的语音和文字仅用于你明确请求的处理。</p>
+    <p class="hero-date">最后更新：2026 年 3 月</p>
+  </section>
+
+  <!-- Summary Cards -->
+  <div class="summary-grid">
+    <div class="summary-card">
+      <span class="icon">🎙️</span>
+      <div class="label">语音数据</div>
+      <div class="desc">仅用于识别，处理完成后立即删除</div>
+    </div>
+    <div class="summary-card">
+      <span class="icon">📱</span>
+      <div class="label">本地存储</div>
+      <div class="desc">历史记录只存在你的设备上</div>
+    </div>
+    <div class="summary-card">
+      <span class="icon">🔑</span>
+      <div class="label">API 凭证</div>
+      <div class="desc">加密存储于系统钥匙串</div>
+    </div>
+    <div class="summary-card">
+      <span class="icon">🚫</span>
+      <div class="label">无广告追踪</div>
+      <div class="desc">不含任何广告 SDK 或行为追踪</div>
+    </div>
+  </div>
+
+  <!-- 1. 收集的信息 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2 class="section-title">我们处理哪些信息</h2>
+    </div>
+    <div class="item-list">
+      <div class="item">
+        <span class="item-icon">🎤</span>
+        <div class="item-content">
+          <div class="item-title">麦克风录音 <span class="tag">临时</span></div>
+          <div class="item-desc">你点击录音时，应用捕获语音音频并发送至语音识别接口。识别完成后，本地音频文件立即删除，不做任何保存。</div>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">📝</span>
+        <div class="item-content">
+          <div class="item-title">处理后的文本 <span class="tag green">仅本地</span></div>
+          <div class="item-desc">语音识别结果和 AI 整理后的文本，仅存储在你设备本地的数据库中，不上传至我们的服务器。</div>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🔐</span>
+        <div class="item-content">
+          <div class="item-title">API 凭证 <span class="tag green">加密存储</span></div>
+          <div class="item-desc">你填写的豆包 API 凭证使用 iOS 系统钥匙串（Keychain）加密存储，只有本应用可以读取。</div>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🚫</span>
+        <div class="item-content">
+          <div class="item-title">不收集的信息</div>
+          <div class="item-desc">我们不收集：姓名、邮箱、手机号、位置、设备标识符、联系人、相册或任何其他个人信息。应用无需注册账号。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 信息使用 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2 class="section-title">信息如何被使用</h2>
+    </div>
+    <p>应用对信息的使用完全服务于你发起的单次操作：</p>
+    <div class="item-list">
+      <div class="item">
+        <span class="item-icon">➊</span>
+        <div class="item-content">
+          <div class="item-title">语音识别</div>
+          <div class="item-desc">音频发送至豆包语音识别 API，获得文字结果后，音频文件随即删除。</div>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">➋</span>
+        <div class="item-content">
+          <div class="item-title">文本整理</div>
+          <div class="item-desc">识别出的文字发送至豆包大语言模型，经 AI 整理为结构化书面文本后返回给你。</div>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">➌</span>
+        <div class="item-content">
+          <div class="item-title">历史记录</div>
+          <div class="item-desc">整理结果存储在你设备的本地数据库，供你日后查看。你可以随时在 App 内删除全部历史记录。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 第三方服务 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <h2 class="section-title">第三方服务</h2>
+    </div>
+    <p>书言使用字节跳动旗下的豆包 API 进行语音识别和文本处理。你的语音和文本数据将在处理过程中经过字节跳动的服务器。</p>
+    <div class="third-party-card">
+      <div class="tp-header">
+        <div class="tp-logo">🤖</div>
+        <div>
+          <div class="tp-name">豆包 API</div>
+          <div class="tp-company">字节跳动旗下火山引擎</div>
+        </div>
+      </div>
+      <div class="tp-desc">
+        提供语音识别（ASR）与大语言模型（LLM）服务。数据处理遵循字节跳动的隐私政策。字节跳动在处理过程中可能会保留必要的日志，具体以其服务协议为准。
+      </div>
+      <a class="tp-link" href="https://www.volcengine.com/docs/6257/68917" target="_blank" rel="noopener">
+        查看火山引擎隐私政策 →
+      </a>
+    </div>
+    <p style="margin-top: 14px;">除此之外，应用不集成任何第三方分析、广告或数据收集 SDK。</p>
+  </section>
+
+  <!-- 4. 数据安全 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <h2 class="section-title">数据安全</h2>
+    </div>
+    <div class="item-list">
+      <div class="item">
+        <span class="item-icon">🔒</span>
+        <div class="item-content">
+          <div class="item-title">传输加密</div>
+          <div class="item-desc">与豆包 API 的所有通信均使用 TLS 1.2+ 加密传输。</div>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🗝️</span>
+        <div class="item-content">
+          <div class="item-title">凭证保护</div>
+          <div class="item-desc">API 凭证存储于 iOS Keychain，由系统硬件安全模块保护，不写入任何明文文件。</div>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">📦</span>
+        <div class="item-content">
+          <div class="item-title">本地隔离</div>
+          <div class="item-desc">历史记录数据库存储在应用沙盒内，其他应用无法访问。我们也无远程访问该数据的能力。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 你的权利 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <h2 class="section-title">你的权利与选择</h2>
+    </div>
+    <div class="item-list">
+      <div class="item">
+        <span class="item-icon">🗑️</span>
+        <div class="item-content">
+          <div class="item-title">删除历史记录</div>
+          <div class="item-desc">在 App 内「历史记录」页面，可随时删除单条或全部历史记录。</div>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">🎙️</span>
+        <div class="item-content">
+          <div class="item-title">撤销麦克风权限</div>
+          <div class="item-desc">前往「设置 → 书言」，可随时关闭麦克风权限。关闭后录音功能将不可用。</div>
+        </div>
+      </div>
+      <div class="item">
+        <span class="item-icon">💾</span>
+        <div class="item-content">
+          <div class="item-title">完全卸载</div>
+          <div class="item-desc">卸载应用将同时删除本地所有数据，包括历史记录和 Keychain 中的凭证。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 未成年人 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <h2 class="section-title">未成年人</h2>
+    </div>
+    <p>书言不面向 13 岁以下儿童。若发现应用被儿童使用，请通过下方联系方式告知我们。</p>
+  </section>
+
+  <!-- 7. 政策变更 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <h2 class="section-title">政策变更</h2>
+    </div>
+    <p>如本政策发生实质性变更，我们将通过 App 内通知或更新本页面的方式告知你，并注明更新日期。继续使用即视为接受更新后的政策。</p>
+  </section>
+
+  <!-- 联系我们 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <h2 class="section-title">联系我们</h2>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-text">
+        <div class="contact-title">有任何隐私问题？</div>
+        <div class="contact-sub">我们承诺在 7 个工作日内回复</div>
+        <a class="contact-email" href="mailto:lidaxiang@gmail.com">lidaxiang@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 李大想 · 书言 · com.structidea.VoiceAssistant<br>本政策适用于书言 iOS 应用的所有版本</p>
+  </div>
+</footer>
+
+</body>
+</html>
